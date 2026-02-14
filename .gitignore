@@ -10,7 +10,7 @@
 
 # Go workspace file
 go.work
-
+dratf/
 # VisualStudioCode
 .vscode/*
 !.vscode/settings.json
@@ -29,4 +29,3 @@ go.work
 # sources
 .src/
 azimut
-templates/index.html
