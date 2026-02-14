@@ -18,8 +18,9 @@ jobs:
         run: |
           rm -rf out
           mkdir out
-          mkdir -p out/static
-          cp -r templates/* out/ || true
+          rm -rf out/static
+          mkdir out/static
+          cp index.html out/ || true
           cp -r static/* out/static || true
           ls -la out
 
