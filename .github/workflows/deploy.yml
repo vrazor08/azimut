@@ -18,9 +18,8 @@ jobs:
         run: |
           rm -rf out
           mkdir out
-          mkdir -p out/templates
           mkdir -p out/static
-          cp -r templates/* out/templates || true
+          cp -r templates/* out/ || true
           cp -r static/* out/static || true
           ls -la out
 
