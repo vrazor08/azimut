@@ -18,8 +18,10 @@ jobs:
         run: |
           rm -rf out
           mkdir out
-          cp -r templates/* out/ || true
-          cp -r static/* out/ || true
+          mkdir -p out/templates
+          mkdir -p out/static
+          cp -r templates/* out/templates || true
+          cp -r static/* out/static || true
           ls -la out
 
       - name: Deploy to GitHub Pages
