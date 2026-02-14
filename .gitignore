@@ -29,3 +29,4 @@ go.work
 # sources
 .src/
 azimut
+templates/index.html

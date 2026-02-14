@@ -1,0 +1,29 @@
+name: Deploy azimut
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Prepare publish dir
+        run: |
+          rm -rf out
+          mkdir out
+          cp -r templates/* out/ || true
+          cp -r static/* out/ || true
+          ls -la out
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
